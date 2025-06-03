@@ -15,8 +15,8 @@
 </head>
 <body>
   <script type="module">
-    import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.150.1/build/three.module.js';
-    import { GLTFLoader } from 'https://cdn.jsdelivr.net/npm/three@0.150.1/examples/jsm/loaders/GLTFLoader.js';
+    import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.150.1/build/three.module.js?module';
+    import { GLTFLoader } from 'https://cdn.jsdelivr.net/npm/three@0.150.1/examples/jsm/loaders/GLTFLoader.js?module';
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -28,7 +28,7 @@
     scene.add(light);
 
     const loader = new GLTFLoader();
-    loader.load('https://zrek87.github.io/damascus-map/damascus.glb', (gltf) => {
+    loader.load('damascus.glb', (gltf) => {
       scene.add(gltf.scene);
       animate();
     }, undefined, (error) => {
